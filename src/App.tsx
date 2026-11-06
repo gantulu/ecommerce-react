@@ -4,7 +4,7 @@ import StoreLayout from '@/components/layout/StoreLayout'
 import { useUiStore } from '@/stores/ui'
 import { useAuthStore } from '@/stores/auth'
 
-// Route-level code splitting — each page is its own chunk.
+// Setel metadata dokumen ke Bahasa Indonesia.
 const HomePage = lazy(() => import('@/pages/HomePage'))
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))
 const CategoryPage = lazy(() => import('@/pages/CategoryPage'))
@@ -36,7 +36,7 @@ function RequireAuth({ children }: { children: React.ReactNode }) {
 
 function PageLoader() {
   return (
-    <div className="flex h-96 w-full items-center justify-center">
+    <div className="flex h-96 w-full items-center justify-center" role="status" aria-label="Memuat halaman">
       <span className="h-8 w-8 animate-spin rounded-full border-2 border-brand-500 border-t-transparent" />
     </div>
   )
@@ -47,7 +47,8 @@ export default function App() {
 
   useEffect(() => {
     applyTheme()
-    document.title = 'Loja — E-commerce Template'
+    document.documentElement.lang = 'id'
+    document.title = 'Toko — Belanja Online'
   }, [applyTheme])
 
   return (
@@ -64,7 +65,6 @@ export default function App() {
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/contato" element={<ContactPage />} />
 
-          {/* Auth-guarded */}
           <Route
             path="/checkout"
             element={
@@ -90,7 +90,6 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
 
-        {/* Standalone (no store chrome) */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/registro" element={<RegisterPage />} />
       </Routes>

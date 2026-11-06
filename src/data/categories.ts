@@ -1,18 +1,13 @@
 import type { Category } from './types'
 
-/**
- * Categories. The `name`/`description` here are Portuguese fallbacks; the UI
- * prefers i18n keys `categories.<slug>.name` / `categories.<slug>.desc` so the
- * label localizes. A converter to another framework should mirror this: data
- * is canonical, display strings come from the i18n bundle.
- */
+// Kategori dan label cadangan menggunakan Bahasa Indonesia.
 export const categories: Category[] = [
-  { id: 1, slug: 'eletronicos', name: 'Eletrônicos', icon: 'package', description: 'Gadgets e dispositivos' },
-  { id: 2, slug: 'moda', name: 'Moda', icon: 'tag', description: 'Roupas e acessórios' },
-  { id: 3, slug: 'casa', name: 'Casa & Decoração', icon: 'home', description: 'Tudo para o seu lar' },
-  { id: 4, slug: 'esportes', name: 'Esportes', icon: 'zap', description: 'Fitness e ar livre' },
-  { id: 5, slug: 'beleza', name: 'Beleza', icon: 'star', description: 'Cuidados e cosméticos' },
-  { id: 6, slug: 'acessorios', name: 'Acessórios', icon: 'gift', description: 'Complementos e mais' },
+  { id: 1, slug: 'eletronicos', name: 'Elektronik', icon: 'package', description: 'Gawai dan perangkat elektronik' },
+  { id: 2, slug: 'moda', name: 'Fashion', icon: 'tag', description: 'Pakaian dan aksesori' },
+  { id: 3, slug: 'casa', name: 'Rumah & Dekorasi', icon: 'home', description: 'Perlengkapan untuk rumah Anda' },
+  { id: 4, slug: 'esportes', name: 'Olahraga', icon: 'zap', description: 'Kebugaran dan aktivitas luar ruang' },
+  { id: 5, slug: 'beleza', name: 'Kecantikan', icon: 'star', description: 'Perawatan diri dan kosmetik' },
+  { id: 6, slug: 'acessorios', name: 'Aksesori', icon: 'gift', description: 'Pelengkap gaya dan kebutuhan Anda' },
 ]
 
 export function findCategory(slug: string): Category | undefined {
