@@ -19,7 +19,7 @@ export function productImages(slug: string, count = 4): string[] {
 }
 
 const COLORS = ['#101828', '#465fff', '#f04438', '#12b76a', '#fdb022', '#ffffff']
-const SIZES_CLOTHES = ['PP', 'P', 'M', 'L', 'XL']
+const SIZES_CLOTHES = ['XS', 'S', 'M', 'L', 'XL']
 const SIZES_SHOES = ['38', '39', '40', '41', '42', '43']
 const SIZES_NONE: string[] = []
 
