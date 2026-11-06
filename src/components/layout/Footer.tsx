@@ -39,7 +39,7 @@ export default function Footer() {
                 <a
                   key={icon}
                   href="#"
-                  aria-label={icon}
+                  aria-label={{ globe: 'Situs web', mail: 'Email', users: 'Komunitas', star: 'Ulasan' }[icon]}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-themed text-muted transition hover:bg-gray-50 hover:text-brand-600 dark:hover:bg-gray-800"
                 >
                   <IconBase name={icon} size={18} />
