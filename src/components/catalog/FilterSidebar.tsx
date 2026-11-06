@@ -25,7 +25,7 @@ interface Props {
 }
 
 export default function FilterSidebar({ filters, onChange, lockCategory = false }: Props) {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   const toggleBrand = (brand: string) => {
     const next = filters.brands.includes(brand)
@@ -34,12 +34,12 @@ export default function FilterSidebar({ filters, onChange, lockCategory = false 
     onChange({ ...filters, brands: next })
   }
 
-  const fmt = (v: number) =>
-    new Intl.NumberFormat(i18n.language === 'pt-BR' ? 'pt-BR' : i18n.language, {
+  const fmt = (value: number) =>
+    new Intl.NumberFormat('id-ID', {
       style: 'currency',
-      currency: i18n.language === 'en' ? 'USD' : i18n.language === 'es' ? 'EUR' : 'BRL',
+      currency: 'IDR',
       maximumFractionDigits: 0,
-    }).format(v)
+    }).format(value)
 
   return (
     <div className="space-y-7">
