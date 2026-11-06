@@ -1,15 +1,9 @@
-const LOCALE_MAP: Record<string, { locale: string; currency: string }> = {
-  'pt-BR': { locale: 'pt-BR', currency: 'BRL' },
-  en: { locale: 'en-US', currency: 'USD' },
-  es: { locale: 'es-ES', currency: 'EUR' },
-}
-
-/** Format a price respecting the active i18n language. */
-export function formatPrice(value: number, lang = 'pt-BR'): string {
-  const cfg = LOCALE_MAP[lang] ?? LOCALE_MAP['pt-BR']
-  return new Intl.NumberFormat(cfg.locale, {
+/** Format every displayed price as Indonesian Rupiah. */
+export function formatPrice(value: number): string {
+  return new Intl.NumberFormat('id-ID', {
     style: 'currency',
-    currency: cfg.currency,
+    currency: 'IDR',
+    maximumFractionDigits: 0,
   }).format(value)
 }
 
