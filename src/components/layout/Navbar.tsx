@@ -7,7 +7,6 @@ import { useWishlistStore } from '@/stores/wishlist'
 import { useAuthStore } from '@/stores/auth'
 import { useUiStore } from '@/stores/ui'
 import IconBase from '@/components/ui/IconBase'
-import LanguageSwitcher from '@/components/ui/LanguageSwitcher'
 
 export default function Navbar() {
   const { t } = useTranslation()
@@ -95,7 +94,6 @@ export default function Navbar() {
             <IconBase name={darkMode ? 'sun' : 'moon'} size={18} />
           </button>
 
-          <LanguageSwitcher />
 
           <Link
             to="/conta/favoritos"
