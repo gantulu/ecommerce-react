@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { formatPrice, discountPercent } from '@/lib/format'
 
 interface Props {
@@ -15,15 +14,13 @@ const SIZES = {
 }
 
 export default function PriceTag({ price, priceOld, size = 'md', showBadge = false }: Props) {
-  const { i18n } = useTranslation()
-  const lang = i18n.language
   const pct = discountPercent(price, priceOld)
 
   return (
     <div className="flex flex-wrap items-baseline gap-2">
-      <span className={`font-bold text-heading ${SIZES[size]}`}>{formatPrice(price, lang)}</span>
+      <span className={`font-bold text-heading ${SIZES[size]}`}>{formatPrice(price)}</span>
       {priceOld && priceOld > price && (
-        <span className="text-sm text-muted line-through">{formatPrice(priceOld, lang)}</span>
+        <span className="text-sm text-muted line-through">{formatPrice(priceOld)}</span>
       )}
       {showBadge && pct > 0 && (
         <span className="rounded-full bg-error-50 px-2 py-0.5 text-xs font-semibold text-error-600 dark:bg-error-500/15 dark:text-error-500">
