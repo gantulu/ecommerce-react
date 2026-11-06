@@ -56,7 +56,7 @@ export default function Navbar() {
           type="button"
           onClick={() => setMobileOpen((s) => !s)}
           className="flex h-10 w-10 items-center justify-center rounded-lg text-body lg:hidden"
-          aria-label="Menu"
+          aria-label="Buka menu"
         >
           <IconBase name={mobileOpen ? 'x' : 'menu'} size={22} />
         </button>
