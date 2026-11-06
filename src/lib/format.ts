@@ -1,5 +1,5 @@
 /** Format every displayed price as Indonesian Rupiah. */
-export function formatPrice(value: number): string {
+export function formatPrice(value: number, _language?: string): string {
   return new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
