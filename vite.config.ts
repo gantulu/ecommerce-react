@@ -12,9 +12,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'Loja — E-commerce Template',
+        name: 'Loja — Toko Online',
         short_name: 'Loja',
-        description: 'React 19 + Tailwind 4 e-commerce storefront template',
+        description: 'Toko online dengan katalog produk dan pengalaman belanja yang mudah.',
         theme_color: '#465fff',
         background_color: '#ffffff',
         display: 'standalone',
